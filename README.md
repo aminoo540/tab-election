@@ -1,5 +1,7 @@
 # Tab Election
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/dabblewriter/tab-election.svg)](https://greenkeeper.io/)
+
 Provides leadership election in the browser across tabs using localStorage *only*. It works across any browser with localStorage. It was able to be made very small by simplifying the leadership election algorithm which only needs to work in this limited environment.
 
 It has been optimized so the first tab(s) open will resolve leadership very quickly, in less than 100ms, avoiding a delay in database or server connections and app startup time. After that, when the existing leader is closed, it will take a few seconds to elect a new leader. This is a necessity because the throttle on setTimeout (and other timing functions in JavaScript) that most browsers place on tabs which are not visible/active requires a longer heartbeat than I would like.
